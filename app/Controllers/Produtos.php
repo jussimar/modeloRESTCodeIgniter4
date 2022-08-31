@@ -41,5 +41,14 @@ class Produtos extends ResourceController
         ]);
     }
 
+    public function deletar($id){
+        $this->produtoModel->delete($id);
+    }
+
+    public function atualizar($id){
+        $data = $this->request->getJSON();
+        $this->produtoModel->update($id, $data);
+    }
+
 
 }
